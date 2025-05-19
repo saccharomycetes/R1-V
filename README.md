@@ -1,5 +1,7 @@
 # R1-V: Reinforcing Super Generalization Ability in Vision Language Models with Less Than $3
 
+News: We released new VLM-RL environments, training codebase and research paper [G1: Bootstrapping Perception and Reasoning Abilities of Vision-Language Model via Reinforcement Learning](https://github.com/chenllliang/G1), check it out!
+
 ![image](https://github.com/user-attachments/assets/c52a448f-d666-4ca6-958b-86267d56de0e) 
 
 <p align="center">
