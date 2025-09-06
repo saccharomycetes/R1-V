@@ -93,9 +93,16 @@ def accuracy_reward(completions, solution, **kwargs):
     return rewards
 
 
+# def format_reward(completions, **kwargs):
+#     """Reward function that checks if the completion has a specific format."""
+#     pattern = r"<think>.*?</think>\s*<answer>.*?</answer>"
+#     completion_contents = [completion[0]["content"] for completion in completions]
+#     matches = [re.fullmatch(pattern, content, re.DOTALL) for content in completion_contents]
+#     return [1.0 if match else 0.0 for match in matches]
+
 def format_reward(completions, **kwargs):
     """Reward function that checks if the completion has a specific format."""
-    pattern = r"<think>.*?</think>\s*<answer>.*?</answer>"
+    pattern = r"<answer>.*?</answer>"
     completion_contents = [completion[0]["content"] for completion in completions]
     matches = [re.fullmatch(pattern, content, re.DOTALL) for content in completion_contents]
     return [1.0 if match else 0.0 for match in matches]
@@ -106,11 +113,17 @@ reward_funcs_registry = {
     "format": format_reward,
 }
 
+# SYSTEM_PROMPT = (
+#     "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
+#     "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
+#     "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
+#     "<think> reasoning process here </think><answer> answer here </answer>"
+# )
+
 SYSTEM_PROMPT = (
     "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-    "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
-    "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
-    "<think> reasoning process here </think><answer> answer here </answer>"
+    "directly provides the user with the answer. The answer is enclosed within <answer> </answer> tags, i.e., "
+    "<answer> answer here </answer>"
 )
 
 
@@ -145,7 +158,8 @@ def main(script_args, training_args, model_args):
     #         ],
     #     }
 
-    QUESTION_TEMPLATE = "{Question}  Output the thinking process in <think> </think> and final answer (number) in <answer> </answer> tags."
+    # QUESTION_TEMPLATE = "{Question}  Output the thinking process in <think> </think> and final answer (number) in <answer> </answer> tags."
+    QUESTION_TEMPLATE = "{Question}  Output the final answer directly in <answer> </answer> tags."
 
     def make_conversation_image(example):
         return {

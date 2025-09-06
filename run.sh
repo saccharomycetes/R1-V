@@ -28,4 +28,4 @@ torchrun --nproc_per_node="2" \
     --run_name Qwen2-VL-2B-GRPO-CLEVR-70k \
     --save_steps 100 \
     --save_only_model true \
-    --num_generations 8   # number of outputs G in grpo, reduce it would lead to faster training and smaller memory cost but higher variance  
+    --num_generations 8
