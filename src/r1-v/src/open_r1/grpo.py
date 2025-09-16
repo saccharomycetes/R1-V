@@ -17,6 +17,9 @@ import re
 from datetime import datetime
 from dataclasses import dataclass, field
 from typing import Optional
+import json
+from PIL import Image
+from datasets import Dataset, DatasetDict
 
 from datasets import load_dataset, load_from_disk
 from transformers import Qwen2VLForConditionalGeneration
@@ -47,6 +50,10 @@ class GRPOScriptArguments(ScriptArguments):
     min_pixels: Optional[int] = field(
         default=3136,
         metadata={"help": "Minimum number of pixels for the image"},
+    )
+    think: bool = field(
+        default=False,
+        metadata={"help": "Whether to use thinking prompts (True) or non-thinking prompts (False)"},
     )
 
 
@@ -100,9 +107,14 @@ def accuracy_reward(completions, solution, **kwargs):
 #     matches = [re.fullmatch(pattern, content, re.DOTALL) for content in completion_contents]
 #     return [1.0 if match else 0.0 for match in matches]
 
-def format_reward(completions, **kwargs):
+def format_reward(completions, think=False, **kwargs):
     """Reward function that checks if the completion has a specific format."""
-    pattern = r"<answer>.*?</answer>"
+    if think:
+        # For thinking prompts, expect both <think> and <answer> tags
+        pattern = r"<think>.*?</think>\s*<answer>.*?</answer>"
+    else:
+        # For non-thinking prompts, expect only <answer> tags
+        pattern = r"<answer>.*?</answer>"
     completion_contents = [completion[0]["content"] for completion in completions]
     matches = [re.fullmatch(pattern, content, re.DOTALL) for content in completion_contents]
     return [1.0 if match else 0.0 for match in matches]
@@ -112,28 +124,73 @@ reward_funcs_registry = {
     "accuracy": accuracy_reward,
     "format": format_reward,
 }
+debyg
+def get_system_prompt(think=False):
+    """Get system prompt based on whether thinking is enabled."""
+    if think:
+        return (
+            "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
+            "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
+            "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
+            "<think> reasoning process here </think><answer> answer here </answer>"
+        )
+    else:
+        return (
+            "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
+            "directly provides the user with the answer. The answer is enclosed within <answer> </answer> tags, i.e., "
+            "<answer> answer here </answer>"
+        )
 
-# SYSTEM_PROMPT = (
-#     "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-#     "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
-#     "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
-#     "<think> reasoning process here </think><answer> answer here </answer>"
-# )
-
-SYSTEM_PROMPT = (
-    "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-    "directly provides the user with the answer. The answer is enclosed within <answer> </answer> tags, i.e., "
-    "<answer> answer here </answer>"
-)
-
+def load_local(data_dir="./data"):
+    
+    metadata_path = os.path.join(data_dir, "metadata.json")
+    with open(metadata_path, 'r') as f:
+        metadata = json.load(f)
+    
+    # Prepare data list
+    data_list = []
+    for img_info in metadata['images']:
+        # Load image
+        img_path = os.path.join(data_dir, img_info['filename'])
+        image = Image.open(img_path).convert('RGB')
+        
+        # Create problem and solution fields
+        problem = "How many unit blocks are there in the image?"
+        solution = f"<answer> {img_info['num_blocks']} </answer>"
+        
+        # Add to data list with all required fields
+        data_list.append({
+            "image": image,
+            "problem": problem,
+            "solution": solution
+        })
+    
+    # Create DatasetDict with train and test splits
+    dataset_dict = DatasetDict({
+        'train': Dataset.from_list(data_list),
+        'test': Dataset.from_list([])  # Empty test set
+    })
+    
+    return dataset_dict
 
 def main(script_args, training_args, model_args):
-    # Get reward functions
-    reward_funcs = [reward_funcs_registry[func] for func in script_args.reward_funcs]
+    # Get reward functions with think parameter
+    reward_funcs = []
+    for func in script_args.reward_funcs:
+        if func == "format":
+            # Create a wrapper that passes the think parameter
+            reward_funcs.append(lambda completions, **kwargs: format_reward(completions, think=script_args.think, **kwargs))
+        else:
+            reward_funcs.append(reward_funcs_registry[func])
 
     # Load the dataset
-    dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
+    if os.path.exists(script_args.dataset_name):
+        dataset = load_local(script_args.dataset_name)
+    else:
+        dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
 
+    # Get system prompt based on think parameter
+    SYSTEM_PROMPT = get_system_prompt(script_args.think)
 
     # Format into conversation
     def make_conversation(example):
@@ -144,22 +201,11 @@ def main(script_args, training_args, model_args):
             ],
         }
 
-    # def make_conversation_image(example):
-    #     return {
-    #         "prompt": [
-    #             {"role": "system", "content": [{"type": "text", "text": SYSTEM_PROMPT}]},
-    #             {
-    #                 "role": "user",
-    #                 "content": [
-    #                     {"type": "image"},
-    #                     {"type": "text", "text": example["problem"]},
-    #                 ],
-    #             },
-    #         ],
-    #     }
-
-    # QUESTION_TEMPLATE = "{Question}  Output the thinking process in <think> </think> and final answer (number) in <answer> </answer> tags."
-    QUESTION_TEMPLATE = "{Question}  Output the final answer directly in <answer> </answer> tags."
+    # Question template based on think parameter
+    if script_args.think:
+        QUESTION_TEMPLATE = "{Question}  Output the thinking process in <think> </think> and final answer (number) in <answer> </answer> tags."
+    else:
+        QUESTION_TEMPLATE = "{Question}  Output the final answer directly in <answer> </answer> tags."
 
     def make_conversation_image(example):
         return {
