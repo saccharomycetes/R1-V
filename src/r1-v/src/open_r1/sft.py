@@ -42,9 +42,10 @@ import sys
 import datasets
 from dataclasses import dataclass, field
 from typing import Optional
+from PIL import Image
 import torch
 import transformers
-from datasets import load_dataset
+from datasets import load_dataset, DatasetDict, Dataset
 from transformers import AutoTokenizer, set_seed, AutoProcessor
 from transformers.trainer_utils import get_last_checkpoint
 import trl
@@ -57,6 +58,7 @@ from trl import (
     get_peft_config,
     get_quantization_config,
 )
+import json
 
 from qwen_vl_utils import process_vision_info
 logger = logging.getLogger(__name__)
@@ -164,6 +166,37 @@ def collate_fn(examples):
 
     return batch
 
+def load_local(data_dir="./data"):
+    
+    metadata_path = os.path.join(data_dir, "metadata.json")
+    with open(metadata_path, 'r') as f:
+        metadata = json.load(f)
+    
+    # Prepare data list
+    data_list = []
+    for img_info in metadata['images']:
+        # Load image
+        img_path = os.path.join(data_dir, img_info['filename'])
+        image = Image.open(img_path).convert('RGB')
+        
+        # Create problem and solution fields
+        problem = "How many unit blocks are there in the image?"
+        solution = f"<answer> {img_info['num_blocks']} </answer>"
+        
+        # Add to data list with all required fields
+        data_list.append({
+            "image": image,
+            "problem": problem,
+            "solution": solution
+        })
+    
+    # Create DatasetDict with train and test splits
+    dataset_dict = DatasetDict({
+        'train': Dataset.from_list(data_list),
+        'test': Dataset.from_list([])  # Empty test set
+    })
+    
+    return dataset_dict
 
 def main(script_args, training_args, model_args):
     # Set seed for reproducibility
@@ -204,7 +237,10 @@ def main(script_args, training_args, model_args):
     # Load datasets
     ################
 
-    dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
+    if os.path.exists(script_args.dataset_name):
+        dataset = load_local(script_args.dataset_name)
+    else:
+        dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
 
     ################
     # Load tokenizer

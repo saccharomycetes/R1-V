@@ -1,4 +1,6 @@
 output/
 output_nothink/
+output_think/
 hostfiles/
 internal_scripts/
+data/

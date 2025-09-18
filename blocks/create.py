@@ -98,23 +98,24 @@ def draw_connected_squares(squares, square_size=30, padding=50):
     
     return img
 
-def generate_random_shape(max_squares=25):
+def generate_random_shape(max_squares=25, min_squares=1):
     """
     Generate a completely random connected shape.
     """
-    num_squares = random.randint(1, max_squares)
+    num_squares = random.randint(min_squares, max_squares)
     grid_size = max(10, num_squares * 2)  # Ensure enough space
-    
+
     squares = generate_connected_squares(grid_size, num_squares)
     return squares
 
-def generate_dataset(num_images=10, max_squares=25, square_size=40, output_dir='./data'):
+def generate_dataset(num_images=10, max_squares=25, min_squares=1, square_size=40, output_dir='./data'):
     """
     Generate a dataset of connected square images with metadata.
-    
+
     Args:
         num_images: Number of images to generate
-        max_squares: Maximum number of squares per image (random from 1 to max)
+        max_squares: Maximum number of squares per image
+        min_squares: Minimum number of squares per image
         square_size: Size of each square in pixels
         output_dir: Directory to save images and metadata
     """
@@ -131,7 +132,7 @@ def generate_dataset(num_images=10, max_squares=25, square_size=40, output_dir='
         # print(f"\nGenerating image {i+1}/{num_images}...")
         
         # Generate random connected squares
-        squares = generate_random_shape(max_squares=max_squares)
+        squares = generate_random_shape(max_squares=max_squares, min_squares=min_squares)
         num_blocks = len(squares)
         # print(f"Generated {num_blocks} connected squares")
         
@@ -158,7 +159,7 @@ def generate_dataset(num_images=10, max_squares=25, square_size=40, output_dir='
         json.dump({
             'dataset_info': {
                 'total_images': num_images,
-                'min_blocks_per_image': 1,
+                'min_blocks_per_image': min_squares,
                 'max_blocks_per_image': max_squares,
                 'square_size_pixels': square_size
             },
@@ -180,6 +181,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate dataset of connected square grids')
     parser.add_argument('--num_images', type=int, default=10000, help='Number of images to generate (default: 1000)')
     parser.add_argument('--max_squares', type=int, default=15, help='Maximum number of squares per image, randomized from 1 to max (default: 15)')
+    parser.add_argument('--min_squares', type=int, default=1, help='Minimum number of squares per image (default: 1)')
     parser.add_argument('--square_size', type=int, default=40, help='Size of each square in pixels (default: 40)')
     parser.add_argument('--output_dir', type=str, default='./data', help='Output directory for images and metadata (default: ./data)')
     
@@ -189,6 +191,7 @@ if __name__ == "__main__":
     generate_dataset(
         num_images=args.num_images,
         max_squares=args.max_squares,
+        min_squares=args.min_squares,
         square_size=args.square_size,
         output_dir=args.output_dir
     )

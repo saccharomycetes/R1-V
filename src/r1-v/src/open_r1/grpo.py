@@ -124,7 +124,7 @@ reward_funcs_registry = {
     "accuracy": accuracy_reward,
     "format": format_reward,
 }
-debyg
+
 def get_system_prompt(think=False):
     """Get system prompt based on whether thinking is enabled."""
     if think:
