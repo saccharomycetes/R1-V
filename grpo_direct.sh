@@ -1,5 +1,6 @@
 export DEBUG_MODE="true" # Enable Debug if you want to see the rollout of model during RL
-export LOG_PATH="./debug_log_2b.txt"
+TIMESTAMP=$(TZ=America/Los_Angeles date +"%Y-%m-%d_%H-%M-%S")
+export LOG_PATH="./debug_log_${TIMESTAMP}_PT.txt"
 export WANDB_API_KEY="b8d0eaae3a3e473649dea6984305a0a412740cb5"
 
 torchrun --nproc_per_node="1" \
