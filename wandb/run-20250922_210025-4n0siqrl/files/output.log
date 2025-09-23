@@ -1,0 +1,225 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+  0%|                                                                                                                                                                                                                                                                                                                                               | 0/1250 [00:00<?, ?it/s]/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py:86: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py:86: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+Invalidate trace cache @ step 0 and module 1746: cache has only 0 modules
+/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py:86: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+Invalidate trace cache @ step 0 and module 2619: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 3492: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 4365: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 5238: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 6111: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 6984: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 7857: cache has only 0 modules
+  0%|▊                                                                                                                                                                                                                                                                                                                                    | 3/1250 [00:50<5:45:09, 16.61s/it]Traceback (most recent call last):
+{'loss': -0.0, 'grad_norm': 3.235971047827713, 'learning_rate': 9.992e-07, 'completion_length': 9.171875, 'rewards/accuracy_reward': 0.03125, 'rewards/<lambda>': 0.984375, 'reward': 1.015625, 'reward_std': 0.09375, 'kl': 0.0, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 8730: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 9603: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 10476: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 11349: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 12222: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 13095: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 13968: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 14841: cache has only 0 modules
+{'loss': 0.0, 'grad_norm': 1.9034019997089873, 'learning_rate': 9.983999999999998e-07, 'completion_length': 9.15625, 'rewards/accuracy_reward': 0.03125, 'rewards/<lambda>': 1.0, 'reward': 1.03125, 'reward_std': 0.0625, 'kl': 0.0003781914710998535, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 15714: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 16587: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 17460: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 18333: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 19206: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 20079: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 20952: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 21825: cache has only 0 modules
+{'loss': 0.0, 'grad_norm': 12.088017977573706, 'learning_rate': 9.976e-07, 'completion_length': 8.875, 'rewards/accuracy_reward': 0.046875, 'rewards/<lambda>': 0.96875, 'reward': 1.015625, 'reward_std': 0.14478103816509247, 'kl': 0.0006306469440460205, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 22698: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 23571: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 24444: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 25317: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 26190: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 27063: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 27936: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 28809: cache has only 0 modules
+  File "/root/R1-V/src/r1-v/src/open_r1/grpo.py", line 263, in <module>
+    main(script_args, training_args, model_args)
+  File "/root/R1-V/src/r1-v/src/open_r1/grpo.py", line 252, in main
+    trainer.train()
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 2241, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 3698, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/root/R1-V/src/r1-v/src/open_r1/trainer/grpo_trainer.py", line 403, in compute_loss
+    per_token_logps = self._get_per_token_logps(model, prompt_completion_ids, attention_mask, pixel_values, image_grid_thw)
+  File "/root/R1-V/src/r1-v/src/open_r1/trainer/grpo_trainer.py", line 338, in _get_per_token_logps
+    logits = model(input_ids, attention_mask=attention_mask, pixel_values=pixel_values, image_grid_thw=image_grid_thw).logits  # (B, L, V)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1899, in forward
+    loss = self.module(*inputs, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1863, in forward
+    outputs = self.model(
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1196, in forward
+    layer_outputs = self._gradient_checkpointing_func(
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_compile.py", line 51, in inner
+    return disable_fn(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 838, in _fn
+    return fn(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 488, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 263, in forward
+    outputs = run_function(*args)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+    result = forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1067, in forward
+    hidden_states = self.input_layernorm(hidden_states)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+    return inner()
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in inner
+    args_result = hook(self, args)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/parameter_offload.py", line 275, in _pre_forward_module_hook
+    self.pre_sub_module_forward_function(module)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/parameter_offload.py", line 449, in pre_sub_module_forward_function
+    param_coordinator.fetch_sub_module(sub_module, forward=True)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 838, in _fn
+    return fn(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 306, in fetch_sub_module
+    self.__all_gather_params(params_to_fetch, forward)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+    ret_val = func(*args, **kwargs)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 450, in __all_gather_params
+    self.__all_gather_params_(nonquantized_params, forward, quantize=self.zero_quantized_weights)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 476, in __all_gather_params_
+    with get_accelerator().stream(self.__allgather_stream):
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/cuda/__init__.py", line 629, in __enter__
+    self.src_prev_stream = torch.cuda.current_stream(None)
+  File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_stream
+    return Stream(
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/root/R1-V/src/r1-v/src/open_r1/grpo.py", line 263, in <module>
+[rank0]:     main(script_args, training_args, model_args)
+[rank0]:   File "/root/R1-V/src/r1-v/src/open_r1/grpo.py", line 252, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 2241, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/trainer.py", line 3698, in training_step
+[rank0]:     loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+[rank0]:   File "/root/R1-V/src/r1-v/src/open_r1/trainer/grpo_trainer.py", line 403, in compute_loss
+[rank0]:     per_token_logps = self._get_per_token_logps(model, prompt_completion_ids, attention_mask, pixel_values, image_grid_thw)
+[rank0]:   File "/root/R1-V/src/r1-v/src/open_r1/trainer/grpo_trainer.py", line 338, in _get_per_token_logps
+[rank0]:     logits = model(input_ids, attention_mask=attention_mask, pixel_values=pixel_values, image_grid_thw=image_grid_thw).logits  # (B, L, V)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 1899, in forward
+[rank0]:     loss = self.module(*inputs, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+[rank0]:     return inner()
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1863, in forward
+[rank0]:     outputs = self.model(
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+[rank0]:     return inner()
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1196, in forward
+[rank0]:     layer_outputs = self._gradient_checkpointing_func(
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_compile.py", line 51, in inner
+[rank0]:     return disable_fn(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 838, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 488, in checkpoint
+[rank0]:     return CheckpointFunction.apply(function, preserve, *args)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/autograd/function.py", line 575, in apply
+[rank0]:     return super().apply(*args, **kwargs)  # type: ignore[misc]
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 263, in forward
+[rank0]:     outputs = run_function(*args)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+[rank0]:     return inner()
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1805, in inner
+[rank0]:     result = forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1067, in forward
+[rank0]:     hidden_states = self.input_layernorm(hidden_states)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1857, in _call_impl
+[rank0]:     return inner()
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in inner
+[rank0]:     args_result = hook(self, args)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/parameter_offload.py", line 275, in _pre_forward_module_hook
+[rank0]:     self.pre_sub_module_forward_function(module)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/parameter_offload.py", line 449, in pre_sub_module_forward_function
+[rank0]:     param_coordinator.fetch_sub_module(sub_module, forward=True)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 838, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 306, in fetch_sub_module
+[rank0]:     self.__all_gather_params(params_to_fetch, forward)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 450, in __all_gather_params
+[rank0]:     self.__all_gather_params_(nonquantized_params, forward, quantize=self.zero_quantized_weights)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/deepspeed/runtime/zero/partitioned_param_coordinator.py", line 476, in __all_gather_params_
+[rank0]:     with get_accelerator().stream(self.__allgather_stream):
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/cuda/__init__.py", line 629, in __enter__
+[rank0]:     self.src_prev_stream = torch.cuda.current_stream(None)
+[rank0]:   File "/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/cuda/__init__.py", line 1069, in current_stream
+[rank0]:     return Stream(
+[rank0]: KeyboardInterrupt

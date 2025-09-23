@@ -20,6 +20,7 @@ from typing import Optional
 import json
 from PIL import Image
 from datasets import Dataset, DatasetDict
+import math
 
 from datasets import load_dataset, load_from_disk
 from transformers import Qwen2VLForConditionalGeneration
@@ -56,6 +57,20 @@ class GRPOScriptArguments(ScriptArguments):
         metadata={"help": "Whether to use thinking prompts (True) or non-thinking prompts (False)"},
     )
 
+def count_reward(y_true: int, y_pred: int,
+                 a: float = 1.0, b: float = 0.3,
+                 p: float = 2.0, c: float = 6.5,
+                 a0: float = 1.0, delta: float = 0.0) -> float:
+    e = abs(y_pred - y_true)  # absolute error
+    scale = a + b * y_true
+    base = (e / scale) ** p if scale > 0 else float('inf')
+
+    small_y_factor = 1.0 + c / (y_true + a0)
+    undercount_factor = 1.0 + (delta if y_pred < y_true else 0.0)
+
+    exponent = base * small_y_factor * undercount_factor
+    reward = math.exp(-exponent)
+    return reward
 
 def accuracy_reward(completions, solution, **kwargs):
     """Reward function that checks if the completion is correct using either symbolic verification or exact string matching."""
@@ -84,8 +99,9 @@ def accuracy_reward(completions, solution, **kwargs):
                 student_answer = content_match.group(1).strip() if content_match else content.strip()
                 
                 # Compare the extracted answers
-                if student_answer == ground_truth:
-                    reward = 1.0
+                # if student_answer == ground_truth:
+                #     reward = 1.0
+                reward = count_reward(int(ground_truth), int(student_answer))
             except Exception:
                 pass  # Keep reward as 0.0 if both methods fail
                 

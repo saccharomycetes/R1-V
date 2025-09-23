@@ -11,7 +11,7 @@ torchrun --nproc_per_node="1" \
     --output_dir ./output/grpo_direct \
     --model_name_or_path Qwen/Qwen2.5-VL-3B-Instruct \
     --dataset_name blocks/hard_data \
-    --deepspeed local_scripts/zero3.json \
+    --deepspeed src/r1-v/local_scripts/zero3.json \
     --max_prompt_length 512 \
     --max_completion_length 512 \
     --per_device_train_batch_size 2 \

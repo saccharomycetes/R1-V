@@ -1,0 +1,261 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+  0%|                                                                                                                                                                                                                                                                                                                                                  | 0/1250 [00:00<?, ?it/s]/root/miniconda3/envs/r1v/lib/python3.10/site-packages/torch/utils/checkpoint.py:86: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+Invalidate trace cache @ step 0 and module 1746: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 2619: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 3492: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 4365: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 5238: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 6111: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 6984: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 7857: cache has only 0 modules
+  0%|█                                                                                                                                                                                                                                                                                                                                       | 4/1250 [01:06<5:37:43, 16.26s/it]
+{'loss': -0.0, 'grad_norm': 9.988313822177393, 'learning_rate': 9.992e-07, 'completion_length': 9.171875, 'rewards/accuracy_reward': 0.5338020846247673, 'rewards/<lambda>': 0.984375, 'reward': 1.518177092075348, 'reward_std': 0.31643887236714363, 'kl': 0.0, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 8730: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 9603: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 10476: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 11349: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 12222: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 13095: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 13968: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 14841: cache has only 0 modules
+{'loss': 0.0, 'grad_norm': 8.997922215718937, 'learning_rate': 9.983999999999998e-07, 'completion_length': 9.171875, 'rewards/accuracy_reward': 0.5073308497667313, 'rewards/<lambda>': 1.0, 'reward': 1.5073308497667313, 'reward_std': 0.2517703790217638, 'kl': 0.00020971894264221191, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 15714: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 16587: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 17460: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 18333: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 19206: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 20079: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 20952: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 21825: cache has only 0 modules
+{'loss': 0.0, 'grad_norm': 19.226330644024113, 'learning_rate': 9.976e-07, 'completion_length': 8.78125, 'rewards/accuracy_reward': 0.4912397675216198, 'rewards/<lambda>': 0.953125, 'reward': 1.4443647861480713, 'reward_std': 0.3645227197557688, 'kl': 0.0010504722595214844, 'epoch': 0.0}
+Invalidate trace cache @ step 0 and module 22698: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 23571: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 24444: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 25317: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 26190: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 27063: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 27936: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 28809: cache has only 0 modules
+{'loss': 0.0, 'grad_norm': 33.576799689475635, 'learning_rate': 9.968e-07, 'completion_length': 9.140625, 'rewards/accuracy_reward': 0.5746687799692154, 'rewards/<lambda>': 1.0, 'reward': 1.5746687799692154, 'reward_std': 0.30477191135287285, 'kl': 0.000793755054473877, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 29682: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 30555: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 31428: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 32301: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 33174: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 34047: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 34920: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 35793: cache has only 0 modules
+{'loss': 0.0001, 'grad_norm': 11.325540303213726, 'learning_rate': 9.959999999999999e-07, 'completion_length': 9.0625, 'rewards/accuracy_reward': 0.616486020386219, 'rewards/<lambda>': 0.984375, 'reward': 1.6008610725402832, 'reward_std': 0.32807572931051254, 'kl': 0.0017616748809814453, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 36666: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 37539: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 38412: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 39285: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 40158: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 41031: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 41904: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 42777: cache has only 0 modules
+{'loss': 0.0003, 'grad_norm': 8.610537072835482, 'learning_rate': 9.952e-07, 'completion_length': 9.203125, 'rewards/accuracy_reward': 0.5912104845046997, 'rewards/<lambda>': 1.0, 'reward': 1.591210499405861, 'reward_std': 0.24855711869895458, 'kl': 0.008396148681640625, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 43650: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 44523: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 45396: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 46269: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 47142: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 48015: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 48888: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 49761: cache has only 0 modules
+{'loss': 0.0006, 'grad_norm': 8.231475377236086, 'learning_rate': 9.944e-07, 'completion_length': 10.6875, 'rewards/accuracy_reward': 0.6512452065944672, 'rewards/<lambda>': 0.984375, 'reward': 1.6356202363967896, 'reward_std': 0.29549373872578144, 'kl': 0.013996124267578125, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 50634: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 51507: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 52380: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 53253: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 54126: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 54999: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 55872: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 56745: cache has only 0 modules
+{'loss': 0.0008, 'grad_norm': 11.325867177104616, 'learning_rate': 9.936e-07, 'completion_length': 9.328125, 'rewards/accuracy_reward': 0.6289339438080788, 'rewards/<lambda>': 1.0, 'reward': 1.6289339363574982, 'reward_std': 0.3102757390588522, 'kl': 0.021087646484375, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 57618: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 58491: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 59364: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 60237: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 61110: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 61983: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 62856: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 63729: cache has only 0 modules
+{'loss': 0.0008, 'grad_norm': 12.292406342072786, 'learning_rate': 9.928e-07, 'completion_length': 9.3125, 'rewards/accuracy_reward': 0.6832870915532112, 'rewards/<lambda>': 1.0, 'reward': 1.6832870841026306, 'reward_std': 0.2623741738498211, 'kl': 0.0205230712890625, 'epoch': 0.01}
+Invalidate trace cache @ step 0 and module 64602: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 65475: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 66348: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 67221: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 68094: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 68967: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 69840: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 70713: cache has only 0 modules
+{'loss': 0.0009, 'grad_norm': 9.673367635866198, 'learning_rate': 9.92e-07, 'completion_length': 9.390625, 'rewards/accuracy_reward': 0.5486797504127026, 'rewards/<lambda>': 1.0, 'reward': 1.5486797392368317, 'reward_std': 0.33319664373993874, 'kl': 0.02193450927734375, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 71586: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 72459: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 73332: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 74205: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 75078: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 75951: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 76824: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 77697: cache has only 0 modules
+{'loss': 0.0008, 'grad_norm': 12.194734182578605, 'learning_rate': 9.912e-07, 'completion_length': 9.21875, 'rewards/accuracy_reward': 0.6475264690816402, 'rewards/<lambda>': 0.984375, 'reward': 1.6319014430046082, 'reward_std': 0.2670644773170352, 'kl': 0.020006179809570312, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 78570: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 79443: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 80316: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 81189: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 82062: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 82935: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 83808: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 84681: cache has only 0 modules
+{'loss': 0.0013, 'grad_norm': 7.692250661555182, 'learning_rate': 9.903999999999999e-07, 'completion_length': 9.328125, 'rewards/accuracy_reward': 0.662919394671917, 'rewards/<lambda>': 1.0, 'reward': 1.6629193872213364, 'reward_std': 0.2355576828122139, 'kl': 0.03318023681640625, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 85554: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 86427: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 87300: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 88173: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 89046: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 89919: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 90792: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 91665: cache has only 0 modules
+{'loss': 0.0014, 'grad_norm': 9.48986746515182, 'learning_rate': 9.896e-07, 'completion_length': 9.3125, 'rewards/accuracy_reward': 0.7281099483370781, 'rewards/<lambda>': 1.0, 'reward': 1.7281099557876587, 'reward_std': 0.23630356788635254, 'kl': 0.03543853759765625, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 92538: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 93411: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 94284: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 95157: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 96030: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 96903: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 97776: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 98649: cache has only 0 modules
+{'loss': 0.0012, 'grad_norm': 9.504416770533686, 'learning_rate': 9.888e-07, 'completion_length': 9.171875, 'rewards/accuracy_reward': 0.7434556037187576, 'rewards/<lambda>': 1.0, 'reward': 1.7434556186199188, 'reward_std': 0.19125166907906532, 'kl': 0.0300750732421875, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 99522: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 100395: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 101268: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 102141: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 103014: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 103887: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 104760: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 105633: cache has only 0 modules
+{'loss': 0.0009, 'grad_norm': 7.708169212015468, 'learning_rate': 9.88e-07, 'completion_length': 9.078125, 'rewards/accuracy_reward': 0.682667076587677, 'rewards/<lambda>': 1.0, 'reward': 1.682667076587677, 'reward_std': 0.24480423517525196, 'kl': 0.02133941650390625, 'epoch': 0.02}
+Invalidate trace cache @ step 0 and module 106506: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 107379: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 108252: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 109125: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 109998: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 110871: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 111744: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 112617: cache has only 0 modules
+{'loss': 0.0012, 'grad_norm': 5.898114392378872, 'learning_rate': 9.871999999999998e-07, 'completion_length': 9.078125, 'rewards/accuracy_reward': 0.655989296734333, 'rewards/<lambda>': 1.0, 'reward': 1.6559892892837524, 'reward_std': 0.22186317015439272, 'kl': 0.02997589111328125, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 113490: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 114363: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 115236: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 116109: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 116982: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 117855: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 118728: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 119601: cache has only 0 modules
+{'loss': 0.0018, 'grad_norm': 11.664855565066524, 'learning_rate': 9.864e-07, 'completion_length': 9.078125, 'rewards/accuracy_reward': 0.7379914149641991, 'rewards/<lambda>': 1.0, 'reward': 1.7379913926124573, 'reward_std': 0.2551823779940605, 'kl': 0.04613494873046875, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 120474: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 121347: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 122220: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 123093: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 123966: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 124839: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 125712: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 126585: cache has only 0 modules
+{'loss': 0.0016, 'grad_norm': 7.516369766746319, 'learning_rate': 9.856e-07, 'completion_length': 9.109375, 'rewards/accuracy_reward': 0.775334358215332, 'rewards/<lambda>': 1.0, 'reward': 1.775334358215332, 'reward_std': 0.19615315273404121, 'kl': 0.040130615234375, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 127458: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 128331: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 129204: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 130077: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 130950: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 131823: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 132696: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 133569: cache has only 0 modules
+{'loss': 0.0031, 'grad_norm': 7.968345620174745, 'learning_rate': 9.847999999999999e-07, 'completion_length': 9.046875, 'rewards/accuracy_reward': 0.7477066367864609, 'rewards/<lambda>': 1.0, 'reward': 1.7477066218852997, 'reward_std': 0.20382128562778234, 'kl': 0.0767364501953125, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 134442: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 135315: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 136188: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 137061: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 137934: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 138807: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 139680: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 140553: cache has only 0 modules
+{'loss': 0.0019, 'grad_norm': 8.192937436145474, 'learning_rate': 9.84e-07, 'completion_length': 9.0625, 'rewards/accuracy_reward': 0.8373315781354904, 'rewards/<lambda>': 1.0, 'reward': 1.8373315632343292, 'reward_std': 0.1624736450612545, 'kl': 0.0470428466796875, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 141426: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 142299: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 143172: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 144045: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 144918: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 145791: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 146664: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 147537: cache has only 0 modules
+{'loss': 0.0025, 'grad_norm': 9.364525339862558, 'learning_rate': 9.832e-07, 'completion_length': 9.0625, 'rewards/accuracy_reward': 0.77790167927742, 'rewards/<lambda>': 1.0, 'reward': 1.7779016941785812, 'reward_std': 0.1792228017002344, 'kl': 0.06243896484375, 'epoch': 0.03}
+Invalidate trace cache @ step 0 and module 148410: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 149283: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 150156: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 151029: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 151902: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 152775: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 153648: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 154521: cache has only 0 modules
+{'loss': 0.0022, 'grad_norm': 5.226138956563033, 'learning_rate': 9.824e-07, 'completion_length': 9.15625, 'rewards/accuracy_reward': 0.7961638048291206, 'rewards/<lambda>': 1.0, 'reward': 1.7961638271808624, 'reward_std': 0.13477736059576273, 'kl': 0.0560302734375, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 155394: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 156267: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 157140: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 158013: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 158886: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 159759: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 160632: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 161505: cache has only 0 modules
+{'loss': 0.0058, 'grad_norm': 11.450138369142497, 'learning_rate': 9.816e-07, 'completion_length': 9.078125, 'rewards/accuracy_reward': 0.8439051136374474, 'rewards/<lambda>': 1.0, 'reward': 1.8439051061868668, 'reward_std': 0.15237505920231342, 'kl': 0.1456298828125, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 162378: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 163251: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 164124: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 164997: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 165870: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 166743: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 167616: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 168489: cache has only 0 modules
+{'loss': 0.0051, 'grad_norm': 9.768697198015087, 'learning_rate': 9.808e-07, 'completion_length': 9.0625, 'rewards/accuracy_reward': 0.8352867066860199, 'rewards/<lambda>': 1.0, 'reward': 1.835286721587181, 'reward_std': 0.14408818632364273, 'kl': 0.1278076171875, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 169362: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 170235: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 171108: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 171981: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 172854: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 173727: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 174600: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 175473: cache has only 0 modules
+{'loss': 0.0101, 'grad_norm': 7.914674845287891, 'learning_rate': 9.8e-07, 'completion_length': 9.0, 'rewards/accuracy_reward': 0.886277012526989, 'rewards/<lambda>': 1.0, 'reward': 1.8862770050764084, 'reward_std': 0.14670029375702143, 'kl': 0.25244140625, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 176346: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 177219: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 178092: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 178965: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 179838: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 180711: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 181584: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 182457: cache has only 0 modules
+{'loss': 0.0028, 'grad_norm': 9.293709323637415, 'learning_rate': 9.791999999999999e-07, 'completion_length': 9.09375, 'rewards/accuracy_reward': 0.8189912512898445, 'rewards/<lambda>': 1.0, 'reward': 1.818991243839264, 'reward_std': 0.1438814930152148, 'kl': 0.070159912109375, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 183330: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 184203: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 185076: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 185949: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 186822: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 187695: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 188568: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 189441: cache has only 0 modules
+{'loss': 0.0114, 'grad_norm': 9.30094345865605, 'learning_rate': 9.784e-07, 'completion_length': 9.046875, 'rewards/accuracy_reward': 0.8415851145982742, 'rewards/<lambda>': 1.0, 'reward': 1.841585099697113, 'reward_std': 0.09513999288901687, 'kl': 0.285308837890625, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 190314: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 191187: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 192060: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 192933: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 193806: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 194679: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 195552: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 196425: cache has only 0 modules
+{'loss': 0.0204, 'grad_norm': 16.94171162216537, 'learning_rate': 9.776e-07, 'completion_length': 9.03125, 'rewards/accuracy_reward': 0.8859391137957573, 'rewards/<lambda>': 1.0, 'reward': 1.8859390914440155, 'reward_std': 0.09261876333039254, 'kl': 0.509490966796875, 'epoch': 0.04}
+Invalidate trace cache @ step 0 and module 197298: cache has only 0 modules
+Invalidate trace cache @ step 0 and module 198171: cache has only 0 modules
